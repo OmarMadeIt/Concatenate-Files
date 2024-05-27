@@ -20,7 +20,7 @@ else:
 
     for uploaded_file in uploaded_files:
         if file_type == "CSV":
-            data = pd.read_csv(uploaded_file, sep=";", error_bad_lines=False)
+            data = pd.read_csv(uploaded_file, sep=";", on_bad_lines='skip')
         elif file_type == "TXT":
             data = pd.read_csv(uploaded_file, delimiter="\t")
         elif file_type == "XLSX":
